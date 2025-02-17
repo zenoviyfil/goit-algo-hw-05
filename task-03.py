@@ -53,7 +53,6 @@ def display_log_counts(counts: Dict[str, int]):
 def main():
     # Перевіряємо наявність аргументів командного рядка
     if len(sys.argv) < 2:
-        print("Використання: python script.py <шлях_до_файлу_логів> [<рівень_логування>]")
         return
     
     file_path = sys.argv[1]
@@ -65,7 +64,7 @@ def main():
     if log_level:
         counts = count_logs_by_level(logs)
         display_log_counts(counts)
-        
+
         filtered_logs = filter_logs_by_level(logs, log_level)
         print(f"\nДеталі логів для рівня {log_level.upper()}:")
         for log in filtered_logs:
